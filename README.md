@@ -9,7 +9,7 @@
 
 ## Atualização de dias completos:
 
-- [ ] Dia 1
+- [x] Dia 1
 - [ ] Dia 2
 - [ ] Dia 3
 - [ ] Dia 4
