@@ -12,9 +12,19 @@ cachorro = {
   patas: 4,
   cor: 'caramelo',
   idade: 14,
-  latido: "Au AUu"
+  latido: "Au AUu",
+  getDogInfo: function () {
+    return `${this.nome} ${this.cor}`
+  }
 }
 
 // 4 Obtenha nome, pernas, cor, idade e valor do latido do objeto cachorro
+console.log(cachorro.nome);
+console.log(cachorro.patas);
+console.log(cachorro.cor);
+console.log(cachorro.idade);
+console.log(cachorro.latido);
 
 // 5 Defina novas propriedades do objeto cachorro: raça, getDogInfo
+cachorro.raca = 'viralata';
+console.log(cachorro.getDogInfo());

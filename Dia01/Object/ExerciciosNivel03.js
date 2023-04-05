@@ -1,6 +1,35 @@
 // Exercícios: Nível 3
 // 1 Crie um objeto literal chamado personAccount . Possui propriedades firstName, lastName, Incomes, Expense e possui os métodos totalIncome, totalExpense, accountInfo, addIncome, addExpense e accountBalance . Receitas é um conjunto de receitas e sua descrição e despesas é um conjunto de receitas e sua descrição.
   
+const personAccount ={
+  firstName: 'carol',
+  lastName:  'silva',
+  Incomes: 2000,
+  Expense: 1000,
+
+  totalIncome: function () {
+    return `Total Income: ${this.Incomes}`
+  },
+  totalExpense:function () {
+    return `Total Expense: ${this.Expense}`
+  },
+
+  accountInfo: function () {
+    return `Nome ${this.firstName} ${this.lastName}, Incomes: ${this.Incomes} and Expense:  ${this.Expense}.`
+  },
+
+  addIncome: function (NewIncome) {
+    this.Incomes = this.Incomes+ NewIncome;
+  },
+
+  addExpense:function (NewExpense) {
+    this.Expense = this.Expense+ NewExpense;
+  },
+
+  accountBalance:function () {
+    return this.Expense - this.Expense;
+  },
+}
 
 
 const users = [
