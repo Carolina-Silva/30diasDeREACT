@@ -60,13 +60,14 @@
 // Exercícios: Elementos JSX ------------------------------------------------
 
 // O que é um elemento JSX?
+// um elemento jsx é uma junção de uma função js com tags html
 
 
 // Escreva seu nome em um elemento JSX e armazene-o em uma variável de nome
 const nome = <p>Carolina</p>
 
 // Escreva um elemento JSX que exiba seu nome completo, país, e-mail, número de telefone. Use h1 para o nome e p para o restante das informações e armazene-as em uma variável de usuário
-const nome = (
+const nome2 = (
     <div>
       <h1>Carolina Nascimento silva</h1>
       <p>Brasil, carol@carol.com,  (00) 00000-0000</p>
