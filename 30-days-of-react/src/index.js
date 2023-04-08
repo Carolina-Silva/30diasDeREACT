@@ -2,7 +2,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 // To get the root element from the HTML document
-import foto from './img/img.jpg'
+import foto from './img/img.png'
+
+import logos from './img/logos.png';
 
 // JSX element, header
 const welcome = 'Welcome to 30 Days Of React'
@@ -29,32 +31,18 @@ const header = (
   </header>
 )
 
-const numOne = 3
-const numTwo = 2
-
-const result = (
-  <p>
-    {numOne} + {numTwo} = {numOne + numTwo}
-  </p>
-)
-
-const yearBorn = 1820
-const currentYear = new Date().getFullYear()
-const age = currentYear - yearBorn
-const personAge = (
-  <p>
-    {' '}
-    {author.firstName} {author.lastName} is {age} years old
-  </p>
-)
-
 // JSX element, main
-const techs = ['HTML', 'CSS', 'JavaScript']
+const techs = ['HTML', 'CSS', 'Js', 'Sass', 'React', 'Redux', 'Node', 'MongoDB', 'Python', 'Mysql', 'Docker', 'Git']
 const techsFormatted = techs.map((tech) => <li>{tech}</li>)
 
 const user = (
-  <div>
+  <div className='card-user'>
     <img src={foto} alt='imagem ' />
+    <h3>Your Name</h3>
+    <p>Junior Developer, Brazil</p>
+    <h3>Skills</h3>
+    <ul>{techsFormatted}</ul>
+    <spam>Joined on Aug 30, 2020</spam>
   </div>
 )
 
@@ -62,22 +50,30 @@ const user = (
 const main = (
   <main>
     <div className='main-wrapper'>
-      <p>
-        Prerequisite to get started{' '}
-        <strong>
-          <em>react.js</em>
-        </strong>
-        :
-      </p>
-      <ul>{techsFormatted}</ul>
-      {result}
-      {personAge}
       {user}
+    </div>
+    <div className='front-end-tec'>
+      <h1>Front End:</h1>
+      <img src={logos} alt='log html css js'/>
     </div>
   </main>
 )
 
 const copyRight = 'Copyright 2020'
+
+// exercicios
+const subscribe = (
+  <div className='sub'>
+    <h1>Subscribe</h1>
+    <p>Sing up with your email address to receive news and updates.</p>
+    <div>
+    <input type='text' placeholder='First name'></input>
+    <input type='text'placeholder='Last name' ></input>
+    <input type='email' placeholder='your best email!'></input>
+    </div>
+    <button>Subscribe</button>
+  </div>
+)
 
 // JSX element, footer
 const footer = (
@@ -93,6 +89,7 @@ const app = (
   <div className='app'>
     {header}
     {main}
+    {subscribe}
     {footer}
   </div>
 )
