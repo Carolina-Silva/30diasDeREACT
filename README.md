@@ -10,9 +10,9 @@
 ## Atualização de dias completos:
 
 - [x] Dia 1
-- [ ] Dia 2
-- [ ] Dia 3
-- [ ] Dia 4
+- [x] Dia 2
+- [x] Dia 3
+- [x] Dia 4
 - [ ] Dia 5
 - [ ] Dia 6
 - [ ] Dia 7
