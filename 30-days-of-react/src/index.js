@@ -17,7 +17,7 @@ const author = {
 const date = 'Oct 2, 2020'
 
 // JSX element, header
-const Header = (
+const header = (
   <header>
     <div className='header-wrapper'>
       <h1>{welcome}</h1>
@@ -47,7 +47,7 @@ const user = (
 )
 
 // JSX element, main
-const Main = (
+const main = (
   <main>
     <div className='main-wrapper'>
       {user}
@@ -62,7 +62,7 @@ const Main = (
 const copyRight = 'Copyright 2020'
 
 // exercicios
-const Subscribe = (
+const subscribe = (
   <div className='sub'>
     <h1>Subscribe</h1>
     <p>Sing up with your email address to receive news and updates.</p>
@@ -76,7 +76,7 @@ const Subscribe = (
 )
 
 // JSX element, footer
-const Footer = (
+const footer = (
   <footer>
     <div className='footer-wrapper'>
       <p>{copyRight}</p>
@@ -87,10 +87,10 @@ const Footer = (
 // JSX element, app
 const app = (
   <div className='app'>
-    <Header />
-    <Main />
-    <Subscribe />
-    <Footer />
+    {header}
+    {main}
+    {subscribe}
+    {footer}
   </div>
 )
 
