@@ -1,62 +1,28 @@
+// index.js
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import userImg from './img/img.png'
-
-const showDate = (time) => {
-  const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ]
-
-  const month = months[time.getMonth()].slice(0,3)
-  const year = time.getFullYear()
-  const date = time.getDate()
-  return ` ${month} ${date} ${year}`
-}
-
-const UserCard = ({user: {firstName, lastName, image}}) => (
-  <div className='user-card'>
-    <img src={image} alt={firstName} />
-    <h2>
-      {firstName}
-      {lastName}
-    </h2>
-  </div>
-)
-
-const Button = ({text, onClick, style}) => (
+// A button component
+const Button = ({ text, onClick, style }) => (
   <button style={style} onClick={onClick}>
     {text}
   </button>
 )
 
+// CSS styles in JavaScript Object
 const buttonStyles = {
   backgroundColor: '#61dbfb',
   padding: 10,
   border: 'none',
   borderRadius: 5,
-  margin: 3,
-  cursor: 'poiter',
-  fontSize: 18,
-  color:'white',
+  margin: '3px auto',
+  cursor: 'pointer',
+  fontSize: 22,
+  color: 'white',
 }
 
-
+// class based component
 class Header extends React.Component {
-  constructor(props) {
-    super(props)
-  }
   render() {
     console.log(this.props.data)
     const {
@@ -68,7 +34,7 @@ class Header extends React.Component {
     } = this.props.data
 
     return (
-      <header>
+      <header style={this.props.styles}>
         <div className='header-wrapper'>
           <h1>{welcome}</h1>
           <h2>{title}</h2>
@@ -82,157 +48,64 @@ class Header extends React.Component {
     )
   }
 }
-
-const Count = ({ count, addOne, minusOne }) => (
+const Login = () => (
   <div>
-    <h1>{count}</h1>
-    <div>
-      <Button text='+1' onClick={addOne} style={buttonStyles}/>
-      <Button text='-1' onClick={minusOne} style={buttonStyles}/>
-    </div>
+    <h3>Please Login</h3>
+  </div>
+)
+const Welcome = (props) => (
+  <div>
+    <h1>Welcome to 30 Days Of React</h1>
   </div>
 )
 
-
-class TechList extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-  render() {
-    const { techs } = this.props
-    const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>)
-    return techsFormatted
-  }
-}
-
-
-class Main extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-  render() {
-    const  {
-      techs,
-      user,
-      greetPeople,
-      handleTime,
-      changeBackground,
-      count,
-      addOne,
-      minusOne,
-    } = this.props
-    return(
-      <main>
-        <div className="main-wrapper">
-          <p>Prerequisite to get started react.js:</p>
-          <ul>
-            <TechList techs={techs}/>
-          </ul>
-          <UserCard user={user}/>
-          <Button 
-              text='Greet People'
-              onClick={greetPeople}
-              style={buttonStyles}
-           />
-           <Count count={count} addOne={addOne} minusOne={minusOne} />   
-        </div>
-      </main>
-    )
-  }
-}
-
-
-
-class Footer extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-  render() {
-    return (
-      <footer>
-        <div className='footer-wrapper'>
-          <p>Copyright {this.props.date.getFullYear()}</p>
-        </div>
-      </footer>
-    )
-  }
-}
-
 class App extends React.Component {
   state = {
-    count: 0,
-    style:{
-      backgroundColor: '',
-      color: '',
-    },
+    loggedIn: false,
+    techs: ['HTML', 'CSS', 'JS'],
   }
-  showDate = (time) => {
-    const months = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December',
-    ]
-
-    const month = months[time.getMonth()].slice(0, 3)
-    const year = time.getFullYear()
-    const date = time.getDate()
-    return ` ${month} ${date}, ${year}`
+  handleLogin = () => {
+    this.setState({
+      loggedIn: !this.state.loggedIn,
+    })
   }
 
-  addOne = () => {
-    this.setState({ count: this.state.count + 1})
-  }
-
-  minusOne = () =>{
-    this.setState({ count: this.state.count - 1})
-  }
-
-  handleTime = () => {
-    alert(this.showDate(new Date()))
-  }
-  greetPeople = () => {
-    alert('Welcome to 30 Days Of React Challenge, 2020')
-  }
   render() {
     const data = {
-      welcome: 'Welcome to 30 Days Of React',
+      welcome: '30 Days Of React',
       title: 'Getting Started React',
       subtitle: 'JavaScript Library',
       author: {
         firstName: 'Asabeneh',
         lastName: 'Yetayeh',
       },
-      date: 'Oct 7, 2020',
+      date: 'Oct 9, 2020',
     }
-    const techs = ['HTML', 'CSS', 'JavaScript']
-    const date = new Date()
 
-    const user = { ...data.author, image: userImg}
+    // We can destructure state
+
+    const { loggedIn, techs } = this.state
+
+    const status = loggedIn ? <Welcome /> : <Login />
 
     return (
       <div className='app'>
         <Header data={data} />
-        <Main
-          user={user}
-          techs={techs}
-          handleTime={this.handleTime}
-          greetPeople={this.greetPeople}
-          changeBackground={this.changeBackground}
-          addOne={this.addOne}
-          minusOne={this.minusOne}
-          count={this.state.count}
+        {status}
+        <Button
+          text={loggedIn ? 'Logout' : 'Login'}
+          style={buttonStyles}
+          onClick={this.handleLogin}
         />
-
-        <Footer date={new Date()} />
+        {techs.length === 3 && (
+          <p>You have all the prerequisite courses to get started React</p>
+        )}
+        {!loggedIn && (
+          <p>
+            Please login to access more information about 30 Days Of React
+            challenge
+          </p>
+        )}
       </div>
     )
   }
