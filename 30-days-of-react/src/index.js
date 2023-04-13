@@ -3,6 +3,28 @@ import ReactDOM from 'react-dom'
 
 import userImg from './img/img.png'
 
+const showDate = (time) => {
+  const months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ]
+
+  const month = months[time.getMonth()].slice(0,3)
+  const year = time.getFullYear()
+  const date = time.getDate()
+  return ` ${month} ${date} ${year}`
+}
+
 const UserCard = ({user: {firstName, lastName, image}}) => (
   <div className='user-card'>
     <img src={image} alt={firstName} />
@@ -32,8 +54,8 @@ const buttonStyles = {
 
 
 class Header extends React.Component {
-  greetPeople = () =>{
-    alert('Parabéns você chagou até o dia 07')
+  constructor(props) {
+    super(props)
   }
   render() {
     console.log(this.props.data)
@@ -61,6 +83,16 @@ class Header extends React.Component {
   }
 }
 
+const Count = ({ count, addOne, minusOne }) => (
+  <div>
+    <h1>{count}</h1>
+    <div>
+      <Button text='+1' onClick={addOne} style={buttonStyles}/>
+      <Button text='-1' onClick={minusOne} style={buttonStyles}/>
+    </div>
+  </div>
+)
+
 
 class TechList extends React.Component {
   constructor(props) {
@@ -79,24 +111,36 @@ class Main extends React.Component {
     super(props)
   }
   render() {
-    return (
+    const  {
+      techs,
+      user,
+      greetPeople,
+      handleTime,
+      changeBackground,
+      count,
+      addOne,
+      minusOne,
+    } = this.props
+    return(
       <main>
-        <div className='main-wrapper'>
+        <div className="main-wrapper">
           <p>Prerequisite to get started react.js:</p>
           <ul>
-            <TechList techs={this.props.techs} />
+            <TechList techs={techs}/>
           </ul>
-          <UserCard user={this.props.user}/>
+          <UserCard user={user}/>
           <Button 
-            text= 'Greet people'
-            onClick ={this.props.greetPeople}
-            style = {buttonStyles}
-          />  
+              text='Greet People'
+              onClick={greetPeople}
+              style={buttonStyles}
+           />
+           <Count count={count} addOne={addOne} minusOne={minusOne} />   
         </div>
       </main>
     )
   }
 }
+
 
 
 class Footer extends React.Component {
@@ -115,6 +159,13 @@ class Footer extends React.Component {
 }
 
 class App extends React.Component {
+  state = {
+    count: 0,
+    style:{
+      backgroundColor: '',
+      color: '',
+    },
+  }
   showDate = (time) => {
     const months = [
       'January',
@@ -136,6 +187,15 @@ class App extends React.Component {
     const date = time.getDate()
     return ` ${month} ${date}, ${year}`
   }
+
+  addOne = () => {
+    this.setState({ count: this.state.count + 1})
+  }
+
+  minusOne = () =>{
+    this.setState({ count: this.state.count - 1})
+  }
+
   handleTime = () => {
     alert(this.showDate(new Date()))
   }
@@ -154,6 +214,7 @@ class App extends React.Component {
       date: 'Oct 7, 2020',
     }
     const techs = ['HTML', 'CSS', 'JavaScript']
+    const date = new Date()
 
     const user = { ...data.author, image: userImg}
 
@@ -165,6 +226,10 @@ class App extends React.Component {
           techs={techs}
           handleTime={this.handleTime}
           greetPeople={this.greetPeople}
+          changeBackground={this.changeBackground}
+          addOne={this.addOne}
+          minusOne={this.minusOne}
+          count={this.state.count}
         />
 
         <Footer date={new Date()} />
