@@ -1,0 +1,30 @@
+Exercícios: Nível 1
+
+    O que são ciclos de vida de componentes?
+    R:Os componentes seguem a lógica de ser criados (montados do DOM), se desenvolvem (updates), e morrem (desmontados do DOM), e em cada fase desse ciclo temos alguns métodos disponíveis.
+
+
+    Quais são os três estágios do ciclo de vida de um componente?
+    R: montagem, atializar e desmontar.
+
+    O que significa montagem?
+    R: Renderizar ou colocar o componente React no DOM 
+
+    O que significa atualizar?
+    R: Quando um estado ou props sofre alterações.
+
+    O que significa desmontar?
+    R: remover  o componente da DOM.
+
+    Quais são os métodos de ciclo de vida de montagem?
+    R:construtor()
+      estático getDerivedStateFromProps()
+      render()
+      componenteDidMount()
+
+    Quais são os métodos de atualização do ciclo de vida?
+    R: estático getDerivedStateFromProps()
+       shouldComponentUpdate()
+       render()
+       getSnapshotBeforeUpdate()
+       componentDidUpdate()
