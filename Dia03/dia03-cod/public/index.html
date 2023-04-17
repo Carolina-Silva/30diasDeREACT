@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -63,9 +64,57 @@
         padding: 10px;
       }
 
+      .card-tech{
+        text-align: center;
+        background-color: #c7d2d4;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 5%;
+      }
+      .card-img{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .card-img img{
+        width: 100px;
+      }
+      .sub{
+        margin: 0 auto;
+        max-width: 900px;
+        background-color: #c3e7f0;
+        border-radius: 10px;
+        text-align: center;
+        padding: 5%;
+      }
+      .sub *{
+        padding: 15px;
+      }
+      .inputs{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      input{
+        border: none;
+        padding: 10px;
+        border-radius: 8px;
+        width: 200px;
+
+      }
+      button{
+        border: none;
+        background-color: rgb(247, 80, 51);
+        color: white;
+        padding: 10px;
+        border-radius: 8px;
+      }
       main {
+        font-family: Arial, Helvetica, sans-serif;
         padding: 10px 10px 60px;
         /* Height of the footer */
+      }
+      main .card-tech, .sub{
+        margin: 20px;
       }
 
       ul {
@@ -75,13 +124,24 @@
       ul li {
         list-style: none;
       }
+      .card-user{
+        padding: 50px;
+      }
+      .card-user li{
+        background-color: #61dbfb;
+        color: rgb(255, 255, 255);
+        padding: 0px;
 
+      }
+      .card-user img{ 
+        width: 100px;
+        border-radius: 50%;
+      }
+            
       footer {
-        position: absolute;
         bottom: 0;
         width: 100%;
         height: 60px;
-        /* Height of the footer */
         background: #6cf;
       }
 

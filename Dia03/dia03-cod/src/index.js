@@ -3,21 +3,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 // To get the root element from the HTML document
 import asabenehImage from './images/asabeneh.jpg'
-
-// to import the doSomeMath from the math.js with or without extension
-import doSomeMath from './math.js'
-
-// to import the other modules
-// since these modules were not exported as default we have to desctructure
-import { addTwo, multiply, subtract } from './math.js'
-
-import * as everything from './math.js'
-console.log(addTwo(5, 5))
-console.log(doSomeMath.addTwo(5, 5))
-console.log(everything)
-// JSX element, header
-
-
+import htmlImg from './images/html_logo.png'
+import cssImg from './images/css_logo.png'
+import reactImg from './images/react_logo.png'
 // JSX element, header
 const welcome = 'Welcome to 30 Days Of React'
 const title = 'Getting Started React'
@@ -66,11 +54,45 @@ const personAge = (
 const techs = ['HTML', 'CSS', 'JavaScript']
 const techsFormatted = techs.map((tech) => <li>{tech}</li>)
 
+
+const technologies = ['html', 'css', 'js', 'sass', 'react', 'MongoDB', 'Python', 'git']
+const technologiesFormatted = techs.map((tech) => <li className='user-techs'>{tech}</li>)
+
+
 const user = (
-  <div>
+  <div className='card-user'>
     <img src={asabenehImage} alt='asabeneh image' />
+    <h4>Asabene yetayeh</h4>
+    <small>Senior Developer, Finland</small>
+    <h4>Skills</h4>
+    <ul>{technologiesFormatted}</ul>
   </div>
 )
+
+const frontTechs = (
+  <div className="card-tech">
+    <h3>Front-End technologies</h3>
+    <div className="card-img">
+      <img src={htmlImg} alt="logo html" className="img-tech" />
+      <img src={cssImg} alt="logo css" className="img-tech" />
+      <img src={reactImg} alt="react logo" className="img-tech" />
+    </div>
+  </div>
+)
+
+const subscribe = (
+  <div className="sub">
+    <h2>Subscribe</h2>
+    <p>Sing up with your email address to receive news and updates</p>
+    <div className="inputs">
+      <input type="text" placeholder='Fist Name'/>
+      <input type="text" placeholder='Last Name'/>
+      <input type="email" placeholder='Email'/>
+    </div>
+    <button>Subscribe</button>
+  </div>
+)
+
 
 // JSX element, main
 const main = (
@@ -87,9 +109,12 @@ const main = (
       {result}
       {personAge}
       {user}
+      {frontTechs}
+      {subscribe}
     </div>
   </main>
 )
+
 
 const copyRight = 'Copyright 2020'
 

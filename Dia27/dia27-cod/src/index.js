@@ -1,20 +1,10 @@
-import React, { useRef } from 'react'
+//index.js
+// importing the react and react-dom package
+
+import React from 'react'
 import ReactDOM from 'react-dom'
 
-const App = (props) => {
-  const ref = useRef(null)
-  const onClick = () => {
-    ref.current.style.backgroundColor = '#616263'
-    ref.current.style.padding ='50px'
-    ref.current.style.textAling='center'
-  }
-  return (
-    <div className='App'>
-      <h1 ref={ref}>DOM tree</h1>
-      <button onClick={onClick}>getting content</button>
-    </div>
-  )
-}
-
+const jsxElement = <h1>This is a JSX element</h1>
 const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+
+ReactDOM.render(jsxElement, rootElement)
