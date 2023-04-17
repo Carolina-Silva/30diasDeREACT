@@ -1,110 +1,141 @@
 // index.js
 import React from 'react'
 import ReactDOM from 'react-dom'
+// To get the root element from the HTML document
 import asabenehImage from './images/asabeneh.jpg'
-
-const hexaColor = () => {
-  let str = '0123456789abcdef'
-  let color = ''
-  for (let i = 0; i < 6; i++) {
-    let index = Math.floor(Math.random() * str.length)
-    color += str[index]
-  }
-  return '#' + color
+import htmlImg from './images/html_logo.png'
+import cssImg from './images/css_logo.png'
+import reactImg from './images/react_logo.png'
+// JSX element, header
+const welcome = 'Welcome to 30 Days Of React'
+const title = 'Getting Started React'
+const subtitle = 'JavaScript Library'
+const author = {
+  firstName: 'Asabeneh',
+  lastName: 'Yetayeh',
 }
+const date = 'Oct 2, 2020'
 
-const HexaColor = () => {
-  const bgColor = hexaColor()
-  const styles = {
-    height: '100px',
-    display: 'flex',
-    'justify-content': 'center',
-    'align-items': 'center',
-    fontFamily: 'Montserrat',
-    margin: '2px auto',
-    borderRadius: '5px',
-    width: '75%',
-    border: '2px solid black',
-  }
-  return (
-    <div style={styles}>
-      <h2>{bgColor}</h2>
-    </div>
-  )
-}
-
-// Header Component
+// JSX element, header
 const Header = () => (
   <header>
     <div className='header-wrapper'>
-      <h1>Welcome to 30 Days Of React</h1>
-      <h2>Getting Started React</h2>
-      <h3>JavaScript Library</h3>
-      <p>Asabeneh Yetayeh</p>
-      <small>Oct 3, 2020</small>
+      <h1>{welcome}</h1>
+      <h2>{title}</h2>
+      <h3>{subtitle}</h3>
+      <p>
+        Instructor: {author.firstName} {author.lastName}
+      </p>
+      <small>Date: {date}</small>
     </div>
   </header>
 )
 
-// User Card Component
-const UserCard = () => (
-  <div className='user-card'>
+const numOne = 3
+const numTwo = 2
+
+const result = (
+  <p>
+    {numOne} + {numTwo} = {numOne + numTwo}
+  </p>
+)
+
+const yearBorn = 1820
+const currentYear = new Date().getFullYear()
+const age = currentYear - yearBorn
+const personAge = (
+  <p>
+    {' '}
+    {author.firstName} {author.lastName} is {age} years old
+  </p>
+)
+
+// JSX element, main
+const techs = ['HTML', 'CSS', 'JavaScript']
+const techsFormatted = techs.map((tech) => <li>{tech}</li>)
+
+
+const technologies = ['html', 'css', 'js', 'sass', 'react', 'MongoDB', 'Python', 'git']
+const technologiesFormatted = techs.map((tech) => <li className='user-techs'>{tech}</li>)
+
+
+const User = () => (
+  <div className='card-user'>
     <img src={asabenehImage} alt='asabeneh image' />
-    <h2>Asabeneh Yetayeh</h2>
+    <h4>Asabene yetayeh</h4>
+    <small>Senior Developer, Finland</small>
+    <h4>Skills</h4>
+    <ul>{technologiesFormatted}</ul>
   </div>
 )
 
-// TechList Component
-const TechList = () => {
-  const techs = ['HTML', 'CSS', 'JavaScript']
-  const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>)
-  return techsFormatted
-}
-const buttonStyles = {
-  padding: '10px 20px',
-  background: 'rgb(0, 255, 0)',
-  border: 'none',
-  borderRadius: 5,
-}
+const FrontTechs = () => (
+  <div className="card-tech">
+    <h3>Front-End technologies</h3>
+    <div className="card-img">
+      <img src={htmlImg} alt="logo html" className="img-tech" />
+      <img src={cssImg} alt="logo css" className="img-tech" />
+      <img src={reactImg} alt="react logo" className="img-tech" />
+    </div>
+  </div>
+)
 
-const Button = () => <button style={buttonStyles}> action </button>
+const Subscribe = () => (
+  <div className="sub">
+    <h2>Subscribe</h2>
+    <p>Sing up with your email address to receive news and updates</p>
+    <div className="inputs">
+      <input type="text" placeholder='Fist Name'/>
+      <input type="text" placeholder='Last Name'/>
+      <input type="email" placeholder='Email'/>
+    </div>
+    <button>Subscribe</button>
+  </div>
+)
 
-// Main Component
+
+// JSX element, main
 const Main = () => (
   <main>
     <div className='main-wrapper'>
-      <p>Prerequisite to get started react.js:</p>
-      <ul>
-        <TechList />
-      </ul>
-      <UserCard />
-      <div>
-        {/* Generate two different hexa colors every time */}
-        <HexaColor />
-        <HexaColor />
-      </div>
+      <p>
+        Prerequisite to get started{' '}
+        <strong>
+          <em>react.js</em>
+        </strong>
+        :
+      </p>
+      <ul>{techsFormatted}</ul>
+      {result}
+      {personAge}
+      <User/>
+      <FrontTechs/>
+      <Subscribe/>
     </div>
   </main>
 )
 
-// Footer Component
+
+const copyRight = 'Copyright 2020'
+
+// JSX element, footer
 const Footer = () => (
   <footer>
     <div className='footer-wrapper'>
-      <p>Copyright 2020</p>
+      <p>{copyRight}</p>
     </div>
   </footer>
 )
 
-// The App, or the parent or the container component
-const App = () => (
+// JSX element, app
+const app = (
   <div className='app'>
-    <Header />
+    <Header/>
     <Main />
     <Footer />
   </div>
 )
 
 const rootElement = document.getElementById('root')
-// we render the App component using the ReactDOM package
-ReactDOM.render(<App />, rootElement)
+// we render the JSX element using the ReactDOM package
+ReactDOM.render(app, rootElement)
