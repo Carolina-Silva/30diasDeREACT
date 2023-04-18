@@ -1,0 +1,16 @@
+/*-----------tweet----------*/
+.tweet-card{
+    max-width: 500px;
+}
+.tweet-header{
+    display: flex;
+    align-items: center;
+}
+.tweet-header img{
+    width: 100px;
+}
+.tweet-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
