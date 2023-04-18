@@ -1,153 +1,143 @@
+// index.js
 import React from 'react'
 import ReactDOM from 'react-dom'
+// To get the root element from the HTML document
 import asabenehImage from './images/asabeneh.jpg'
-
-// Fuction to show month date year
-
-const showDate = (time) => {
-  const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ]
-
-  const month = months[time.getMonth()].slice(0, 3)
-  const year = time.getFullYear()
-  const date = time.getDate()
-  return ` ${month} ${date}, ${year}`
+import htmlImg from './images/html_logo.png'
+import cssImg from './images/css_logo.png'
+import jsImg from './images/js_logo.png'
+import reactImg from './images/react_logo.png'
+// JSX element, header
+const welcome = 'Welcome to 30 Days Of React'
+const title = 'Getting Started React'
+const subtitle = 'JavaScript Library'
+const author = {
+  firstName: 'Asabeneh',
+  lastName: 'Yetayeh',
 }
+const date = 'Oct 2, 2020'
 
-// Header Component
-const Header = ({
-  data: {
-    welcome,
-    title,
-    subtitle,
-    author: { firstName, lastName },
-    date,
-  },
-}) => {
-  return (
-    <header>
-      <div className='header-wrapper'>
-        <h1>{welcome}</h1>
-        <h2>{title}</h2>
-        <h3>{subtitle}</h3>
-        <p>
-          {firstName} {lastName}
-        </p>
-        <small>{showDate(date)}</small>
-      </div>
-    </header>
-  )
-}
+// JSX element, header
+const Header = () => (
+  <header>
+    <div className='header-wrapper'>
+      <h1>{welcome}</h1>
+      <h2>{title}</h2>
+      <h3>{subtitle}</h3>
+      <p>
+        Instructor: {author.firstName} {author.lastName}
+      </p>
+      <small>Date: {date}</small>
+    </div>
+  </header>
+)
 
-// TechList Component
-const TechList = ({ techs }) => {
-  const techList = techs.map((tech) => <li key={tech}>{tech}</li>)
-  return techList
-}
+const numOne = 3
+const numTwo = 2
 
-// User Card Component
-const UserCard = ({ user: { firstName, lastName, image } }) => (
-  <div className='user-card'>
-    <img src={image} alt={firstName} />
-    <h2>
-      {firstName}
-      {lastName}
-    </h2>
+const result = (
+  <p>
+    {numOne} + {numTwo} = {numOne + numTwo}
+  </p>
+)
+
+const yearBorn = 1820
+const currentYear = new Date().getFullYear()
+const age = currentYear - yearBorn
+const personAge = (
+  <p>
+    {' '}
+    {author.firstName} {author.lastName} is {age} years old
+  </p>
+)
+
+// JSX element, main
+const techs = ['HTML', 'CSS', 'JavaScript']
+const techsFormatted = techs.map((tech) => <li>{tech}</li>)
+
+
+const technologies = ['html', 'css', 'js', 'sass', 'react', 'MongoDB', 'Python', 'git']
+const technologiesFormatted = techs.map((tech) => <li className='user-techs'>{tech}</li>)
+
+
+const User = () => (
+  <div className='card-user'>
+    <img src={asabenehImage} alt='asabeneh image' />
+    <h4>Asabene yetayeh</h4>
+    <small>Senior Developer, Finland</small>
+    <h4>Skills</h4>
+    <ul>{technologiesFormatted}</ul>
   </div>
 )
 
-// A button component
-
-const Button = ({ text, onClick, style }) => (
-  <button style={style} onClick={onClick}>
-    {text}
-  </button>
+const FrontTechs = () => (
+  <div className="card-tech">
+    <h3>Front-End technologies</h3>
+    <div className="card-img">
+      <img src={htmlImg} alt="logo html" className="img-tech" />
+      <img src={cssImg} alt="logo css" className="img-tech" />
+      <img src={jsImg} alt='Js logo' className='img-tech' />
+      <img src={reactImg} alt="react logo" className="img-tech" />
+    </div>
+  </div>
 )
 
-const buttonStyles = {
-  backgroundColor: '#61dbfb',
-  padding: 10,
-  border: 'none',
-  borderRadius: 5,
-  margin: 3,
-  cursor: 'pointer',
-  fontSize: 18,
-  color: 'white',
-}
+const Subscribe = () => (
+  <div className="sub">
+    <h2>Subscribe</h2>
+    <p>Sing up with your email address to receive news and updates</p>
+    <div className="inputs">
+      <input type="text" placeholder='Fist Name'/>
+      <input type="text" placeholder='Last Name'/>
+      <input type="email" placeholder='Email'/>
+    </div>
+    <button>Subscribe</button>
+  </div>
+)
 
-// Main Component
-const Main = ({ user, techs, greetPeople, handleTime }) => (
+
+// JSX element, main
+const Main = () => (
   <main>
     <div className='main-wrapper'>
-      <p>Prerequisite to get started react.js:</p>
-      <ul>
-        <TechList techs={techs} />
-      </ul>
-      <UserCard user={user} />
-      <Button text='Greet People' onClick={greetPeople} style={buttonStyles} />
-      <Button text='Show Time' onClick={handleTime} style={buttonStyles} />
+      <p>
+        Prerequisite to get started{' '}
+        <strong>
+          <em>react.js</em>
+        </strong>
+        :
+      </p>
+      <ul>{techsFormatted}</ul>
+      {result}
+      {personAge}
+      <User/>
+      <FrontTechs/>
+      <Subscribe/>
     </div>
   </main>
 )
 
-// Footer Component
-const Footer = ({ copyRight }) => (
+
+const copyRight = 'Copyright 2020'
+
+// JSX element, footer
+const Footer = () => (
   <footer>
     <div className='footer-wrapper'>
-      <p>Copyright {copyRight.getFullYear()}</p>
+      <p>{copyRight}</p>
     </div>
   </footer>
 )
 
-// The App, or the parent or the container component
-// Functional Component
-const App = () => {
-  const data = {
-    welcome: 'Welcome to 30 Days Of React',
-    title: 'Getting Started React',
-    subtitle: 'JavaScript Library',
-    author: {
-      firstName: 'Asabeneh',
-      lastName: 'Yetayeh',
-    },
-    date: new Date(), // date needs to be formatted to a human readable format
-  }
-  const date = new Date()
-  const techs = ['HTML', 'CSS', 'JavaScript']
-  // copying the author from data object to user variable using spread operator
-  const user = { ...data.author, image: asabenehImage }
+// JSX element, app
+const App = () => (
+  <div className='app'>
+    <Header/>
+    <Main />
+    <Footer />
+  </div>
+)
 
-  const handleTime = () => {
-    alert(showDate(new Date()))
-  }
-  const greetPeople = () => {
-    alert('Welcome to 30 Days Of React Challenge, 2020')
-  }
-
-  return (
-    <div className='app'>
-      <Header data={data} />
-      <Main
-        user={user}
-        techs={techs}
-        handleTime={handleTime}
-        greetPeople={greetPeople}
-      />
-      <Footer copyRight={date} />
-    </div>
-  )
-}
 const rootElement = document.getElementById('root')
+// we render the JSX element using the ReactDOM package
 ReactDOM.render(<App />, rootElement)

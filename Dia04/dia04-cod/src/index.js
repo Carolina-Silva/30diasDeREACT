@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom'
 import asabenehImage from './images/asabeneh.jpg'
 import htmlImg from './images/html_logo.png'
 import cssImg from './images/css_logo.png'
+import jsImg from './images/js_logo.png'
 import reactImg from './images/react_logo.png'
 // JSX element, header
 const welcome = 'Welcome to 30 Days Of React'
@@ -75,6 +76,7 @@ const FrontTechs = () => (
     <div className="card-img">
       <img src={htmlImg} alt="logo html" className="img-tech" />
       <img src={cssImg} alt="logo css" className="img-tech" />
+      <img src={jsImg} alt='Js logo' className='img-tech' />
       <img src={reactImg} alt="react logo" className="img-tech" />
     </div>
   </div>
