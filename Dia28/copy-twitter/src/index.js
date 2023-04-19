@@ -28,7 +28,29 @@ const InputTweet = () =>(
   </div>
 )
 
-const Tweet = () =>(
+const showDate = (time) => {
+  const months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ]
+
+  const month = months[time.getMonth()].slice(0, 3)
+  const year = time.getFullYear()
+  const date = time.getDate()
+  return ` ${month} ${date}, ${year}`
+}
+
+const Tweet = (props) =>(
   <div className="tweet-card">
     <div className="tweet-header">
       <img src={personCircle}/>
@@ -36,9 +58,7 @@ const Tweet = () =>(
       <small>@user</small>
     </div>
     <div className="tweet-main">
-      <p>
-      30 Days Of React challenge has been started on 1 October and still ongoing. It will end the 30 October 2020. It was a real challenge for everyone. Students learned quite a lot of concepts. I hope this will help lots of students. 
-      </p>
+      <p>{props.content}</p>
     </div>
     <div className="tweet-footer">
       <div className='edit'>
@@ -55,7 +75,7 @@ const Tweet = () =>(
           <img src={arrowRepeat} />
       </div>
       <div className='date'>
-        <small>Apr 18, 2023 14:29</small>
+        <small>{props.date}</small>
       </div>
     </div>
   </div>
@@ -64,11 +84,10 @@ const Tweet = () =>(
 const Main = () => (
   <main>
     <InputTweet />
-    <Tweet />
-    <Tweet />
-    <Tweet />
-    <Tweet />
-    
+    <Tweet content="30 Days Of React challenge has been started on 1 October and still ongoing. It will end the 30 October 2020. It was a real challenge for everyone. Students learned quite a lot of concepts. I hope this will help lots of students." date="Apr 18, 2023 14:29"/>
+    <Tweet content="testando os props" date="Apr 18, 2023 14:29"/>
+    <Tweet content="30 dias de React" date="Apr 19, 2023 14:17" />
+    <Tweet content="Projeto dia 28" date="Apr 19, 2023 14:18" />
   </main>
 )
 
