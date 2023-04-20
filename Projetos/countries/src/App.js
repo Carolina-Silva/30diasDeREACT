@@ -11,6 +11,9 @@ const Main = () =>{
       </div>
       <div className="cards">
           <CardCountry />
+          <CardCountry />
+          <CardCountry />
+          <CardCountry />
       </div>
       
     </main>

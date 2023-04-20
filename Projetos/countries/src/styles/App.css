@@ -16,6 +16,8 @@
 }
 
 .cards{
+  display: flex;
+  gap: 10px;
   background-color: var(--background);
   padding: 2em;
 }
