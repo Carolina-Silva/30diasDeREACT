@@ -16,26 +16,26 @@
 - [x] Dia 5
 - [x] Dia 6
 - [x] Dia 7
-- [ ] Dia 8
-- [ ] Dia 9
-- [ ] Dia 10
-- [ ] Dia 11 
-- [ ] Dia 12
-- [ ] Dia 13
-- [ ] Dia 14
-- [ ] Dia 15
-- [ ] Dia 16
-- [ ] Dia 17
-- [ ] Dia 18
-- [ ] Dia 19
-- [ ] Dia 20
-- [ ] Dia 21
-- [ ] Dia 22
-- [ ] Dia 23
-- [ ] Dia 24
-- [ ] Dia 25
-- [ ] Dia 26
-- [ ] Dia 27
-- [ ] Dia 28
+- [x] Dia 8
+- [x] Dia 9
+- [x] Dia 10
+- [x] Dia 11 
+- [x] Dia 12
+- [x] Dia 13
+- [x] Dia 14
+- [x] Dia 15
+- [x] Dia 16
+- [x] Dia 17
+- [x] Dia 18
+- [x] Dia 19
+- [x] Dia 20
+- [x] Dia 21
+- [x] Dia 22
+- [x] Dia 23
+- [x] Dia 24
+- [x] Dia 25
+- [x] Dia 26
+- [x] Dia 27
+- [x] Dia 28
 - [ ] Dia 29
 - [ ] Dia 30
