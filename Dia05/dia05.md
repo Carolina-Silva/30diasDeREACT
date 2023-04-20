@@ -1,0 +1,15 @@
+#### Exercícios: Nível 1
+- O que é props em um componente React?
+R: Um meio para transportar dados, que são passados de um componente para outro, principalmente de um componente pai para um filho.
+
+- Como você acessa props em um componente React?
+R:     ```{props.[nome-da-props]}```
+
+- Quais tipos de dados podemos passar como props para componentes?
+R: strings, inteiros, booleans, matriz, objetos e funções
+
+- O que é um propTypes?
+R: É um pacote que ajuda a atribuir os tipos de dados passados como props ao componente.
+
+- O que é um propTypes padrão?
+R: é o escolhido para um componente receber, se usa defaultProps para essa função.
