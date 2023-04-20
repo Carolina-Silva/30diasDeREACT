@@ -7,32 +7,46 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header{
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-bottom: 3px solid var(--font-color);
 }
 
-.App-link {
-  color: #61dafb;
-}
+.card-user{
+  padding: 20px;
+  margin: 30px;
+  max-width: 400px;
+  border:  2px solid var(--font-color);
+  border-radius: 8px;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.card-header{
+  display: flex;
+  align-items: center;
+  
+}
+.card-header h3{
+  margin-left: 10px;
+}
+.card-header h3::after{
+  content: "Carolina-Silva";
+  font-size: small;
+  opacity: 75%;
+  margin-left: 10px;
+}
+.card-header img{
+  border-radius: 50%;
+}
+.card-main{
+  text-align: justify;
+}
+.card-main i {
+  font-size: 25px;
+  margin: 0 6px;
+  color: var(--font-color);
+}
+.card-main i:hover{
+  color: var(--link-color);
 }

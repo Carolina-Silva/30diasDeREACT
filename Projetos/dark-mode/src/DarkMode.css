@@ -1,0 +1,82 @@
+:root{
+    --font-color: #333;
+    --backgroud-color:#eee;
+    --link-color: cornflowerblue;
+}
+
+[data-theme="dark"]{
+    --font-color: #eee;
+    --backgroud-color:#333;
+    --link-color: lightblue;
+
+}
+
+body{
+    background-color:  var(--backgroud-color);
+    color: var(--font-color);
+}
+
+a{
+    color: var(--link-color);
+}
+
+.toggle-theme-wrapper{
+    margin: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
+.toggle-theme-wrapper span {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .toggle-theme {
+    position: relative;
+    display: inline-block;
+    height: 30px;
+    width: 50px;
+  }
+  
+  .toggle-theme input {
+    display: none;
+  }
+  
+  .slider {
+    background-color: #ccc;
+    position: absolute;
+    cursor: pointer;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    transition: 0.2s;
+  }
+  
+  .slider:before {
+    background-color: #fff;
+    bottom: 5px;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    position: absolute;
+    transition: 0.4s;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(22px);
+  }
+  
+  input:checked + .slider {
+    background-color: cornflowerblue;
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
