@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+}
+
+.search-box{
+  margin: 2em;
+
+}
+.search-box input{
+  padding: 0.5em;
+  min-width: 400px;
+  border: 2px solid var(--destaque);
+  opacity: 80%;
+  border-radius: 8px;
+  background-color: "#fff";
+}
+
+.cards{
+  background-color: var(--background);
+  padding: 2em;
+}

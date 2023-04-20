@@ -1,0 +1,12 @@
+header{
+    width: 100%;
+    background: var(--background);
+    padding: 1em;
+}
+h1{
+    text-transform: uppercase;
+    color: var(--destaque);
+}
+span{
+    opacity: 75%;
+}
