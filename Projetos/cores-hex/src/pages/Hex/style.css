@@ -1,0 +1,21 @@
+
+#conteudo h2 {
+  margin: 10px;
+}
+
+#hex{
+  max-width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+#hex div{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  height: 100px;
+ }
