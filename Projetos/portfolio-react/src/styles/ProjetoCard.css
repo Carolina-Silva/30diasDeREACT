@@ -1,0 +1,26 @@
+.card{
+    padding: var(--mb-3);
+    margin: var(--mb-2);
+    width: 300px;
+    text-align: center;
+
+    border: 2px solid var(--text-color);
+    border-radius: 8px;
+}
+.card-info{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.card a{
+    background-color: var(--first-color);
+    color: var(--white-color);
+    border-radius: 8px;
+
+    padding: var(--mb-1);
+}
+
+.card-img{
+    background-color: #eee;
+    height: 150px;
+}

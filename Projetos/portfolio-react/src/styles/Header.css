@@ -1,0 +1,41 @@
+/*NAV-------------------------------------*/
+.nav {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--dark-color);
+}
+.nav__menu{
+    width: 50%;
+}
+.nav__list{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: var(--mb-4);
+}
+.nav__link {
+    position: relative;
+    color: var(--white-color);
+    font-weight: 500 !important;
+}
+
+.nav__link:hover {
+    color: var(--first-color);
+}
+.logo{
+    margin-left: 100px;
+}
+
+.nav__logo {
+    color: var(--white-color);
+    font-weight: 500 !important;
+}
+
+.nav__toggle {
+    color: var(--white-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}

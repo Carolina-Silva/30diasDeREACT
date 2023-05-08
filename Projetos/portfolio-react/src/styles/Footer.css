@@ -1,0 +1,25 @@
+footer{
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    padding: var(--mb-3);
+    text-align: center;
+
+    display:  flex;
+    flex-direction: column;
+    gap: var(--mb-1);
+}
+
+footer .rede-sociais{
+    max-width: 200px;
+    margin: 0 auto;
+    display: flex;
+    gap: var(--mb-2);
+}
+.rede-social i{
+    color: var(--white-color);
+    font-size: var(--h2-font-size);
+}
+.rede-social i:hover {
+    color: var(--first-color);
+
+}

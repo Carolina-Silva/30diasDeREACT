@@ -1,0 +1,17 @@
+.home{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: var(--big-font-size);
+    height: 70vh;
+}
+.home h1{
+    font-size: var(--big-font-size);
+
+}
+
+.home h1 span{
+    color: var(--first-color) !important;
+
+}

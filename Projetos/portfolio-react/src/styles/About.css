@@ -1,0 +1,9 @@
+.about{
+    height: 50vh;
+    text-align: center;
+    padding: var(--mb-4);
+}
+.about h3, .about p span{
+    color: var(--first-color);
+
+}
