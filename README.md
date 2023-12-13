@@ -37,8 +37,8 @@
 - [x] Dia 26
 - [x] Dia 27
 - [x] Dia 28
-- [ ] Dia 29
-- [ ] Dia 30
+- [x] Dia 29
+- [x] Dia 30
 
 <!--
 https://www-learnreact-app.translate.goog/challenge?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en&_x_tr_hist=true
